@@ -14,7 +14,8 @@
     --blue2: #bfccf0;
     --grey2: #c5c2c2;
     --beige: #d4b675bd;
-    --light-beige: #edbe59;
+    --light-beige: #edbe5900;
+    --transparent: rgba(162, 162, 162, 0);
 }
 
 html {
@@ -23,7 +24,6 @@ html {
 
 body {
     height: 100%;
-    background: linear-gradient(var(--grey), var(--grey2));
     background-image: url(./gallery/bakcground.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -49,13 +49,17 @@ body {
 
 .select-product {
     background: linear-gradient(var(--black2),var(--grey));
-    height: 270px;
     width: 450px;
     max-width: 80%;
-    margin: 50px auto;
+    margin: 50px auto 30px auto;
     text-align: center;
     border-radius: 15px;
     color: var(--white);
+    transition: all .3s ease;
+}
+
+.close {
+    height: 150px;
 }
 
 .select-product h2 {
@@ -74,12 +78,32 @@ body {
     padding: 0 10px;
     border-radius: 10px;
     box-shadow: 0 0 2px 2px var(--black2);
+    vertical-align: top;
+}
+
+.select-button {
+    height: 40px;
 }
 
 .select-product select:focus {
     outline: none;
 }
 
+#enter {
+    background-image: url(./gallery/search.png);
+    background-position: center center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    width: 10%;
+    height: 40px;
+    background-color: var(--transparent);
+    transition: transform .3s ease;
+}
+
+#enter:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
 
 .select-product h3 {
     padding: 20px 0 30px ;
@@ -100,3 +124,35 @@ body {
     justify-content: space-between; 
 }
 
+.product {
+    display: none;
+}
+
+.add-product {
+ height: 45px;
+ width: 100px;
+ margin: 0 auto;
+}
+
+.add-product button{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: var(--black2);
+    color: var(--white);
+    box-shadow: 0 0 7px 3px var(--white2);
+    transition: transform .3s ease;
+}
+
+.add-product button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/* cuando se despliegue el objeto */
+
+.open {
+    height: 270px;
+}
