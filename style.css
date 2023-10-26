@@ -6,15 +6,15 @@
 
 :root {
     --white: #f5f5f5;
-    --white2: #a5a5a5c6;
+    --white2: #e4e4e4e3;
     --black: #252525;
     --black2: #0e0e0eb0;
     --grey: #7b7b7b;
     --blue: #8b8cba;
     --blue2: #bfccf0;
     --grey2: #c5c2c2;
-    --beige: #d4b675bd;
-    --light-beige: #edbe5900;
+    --beige: #d4b675;
+    --light-beige: #c29a43;
     --transparent: rgba(162, 162, 162, 0);
 }
 
@@ -29,12 +29,13 @@ body {
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
+    font-family: sans-serif;
 }
 .title {
     height: 120px;
     background-color: var(--black2);
     color: antiquewhite;
-    box-shadow: 0 0 10px 5px var(--grey2);
+    box-shadow: 0 0 10px 5px var(--beige);
 }
 
 .title h1 {
@@ -43,7 +44,7 @@ body {
     padding-bottom: 20px;
     padding-top: 40px;
     font-size: 30px;
-    color: var(--white);
+    color: var(--beige);
 }
 
 
@@ -59,12 +60,13 @@ body {
 }
 
 .close {
-    height: 150px;
+    height: 270px;
 }
 
 .select-product h2 {
     font-size: 27px;
     padding: 28px 0 20px 0;
+    color: var(--beige);
 }
 
 .select-product select {
@@ -74,7 +76,7 @@ body {
     height: 40px;
     font-size: 16px;
     font-weight: bolder;
-    color: var(--grey2);
+    color: var(--beige);
     padding: 0 10px;
     border-radius: 10px;
     box-shadow: 0 0 2px 2px var(--black2);
@@ -108,7 +110,7 @@ body {
 .select-product h3 {
     padding: 20px 0 30px ;
     font-size: 25px;
-    color: var(--white);
+    color: var(--beige);
 }
 
 .select-product div {
@@ -125,7 +127,21 @@ body {
 }
 
 .product {
-    display: none;
+    display: block;
+}
+
+.product button {
+    color: var(--beige);
+    width: 40%;
+    font-weight: bold;
+    transition: all .2s ease-in;
+    margin: 0 3px;
+    vertical-align: top;
+}
+
+.product button:hover {
+    transform: scale(1.1);
+    border: 1px solid var(--beige);
 }
 
 .add-product {
@@ -138,12 +154,12 @@ body {
     height: 100%;
     width: 100%;
     border-radius: 5px;
-    border: none;
+    border: 2px solid var(--beige);
     font-size: 12px;
     font-weight: bold;
-    background-color: var(--black2);
+    background-color: var(--beige);
     color: var(--white);
-    box-shadow: 0 0 7px 3px var(--white2);
+    /* box-shadow: 0 0 7px 3px var(--beige); */
     transition: transform .3s ease;
 }
 
@@ -151,8 +167,115 @@ body {
     transform: scale(1.1);
     cursor: pointer;
 }
-/* cuando se despliegue el objeto */
+/* cuando se elija objeto*/
 
 .open {
     height: 270px;
+}
+
+
+/* cuando se elija "ver producto" */
+
+.display-product {
+    height: 780px;
+    width: 80%;
+    background: linear-gradient(var(--white), var(--white));
+    margin: 20px auto;
+    border-radius: 15px;
+    padding: 40px;
+    border: 10px solid var(--beige)
+}
+
+.display-product h3 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--black2);
+    padding-bottom: 25px;
+}
+
+.display-product h4 {
+    margin: 20px 0;
+    font-size: 20px;
+    color: var(--black2);
+}
+
+.date-product , .statistics30{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.date-product div {
+    height: 150px;
+    width: 30%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 20px;
+    color: var(--black2);
+    transition: all .5s ease;
+    font-weight: bold;
+    border: .5px solid var(--beige);
+}
+
+.statistics30 div {
+    height: 150px;
+    border-radius: 10px;
+    padding: 10px 5px;
+    font-size: 20px;
+    color: var(--black2);
+    transition: all .5s ease;
+    font-weight: bold;
+    border: .5px solid var(--beige);
+    text-align: center;
+    justify-content: center;
+}
+
+.date-product div:hover , .statistics30 div:hover {
+    box-shadow: 0 0 4px 1px var(--grey2);
+    transform: scale(1.1);
+    
+}
+
+.date-product h5 {
+    font-size: 30px;
+    padding: 29px;
+    color: var(--beige);
+}
+
+.statistics30 h5 {
+    font-size: 25px;
+    height: 100%;
+    padding: 25px;
+    color: var(--beige);
+}
+
+.statistics30 {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+}
+
+.button {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button button{
+    margin: 100px 0 50px;
+    background-color: var(--beige);
+    color: var(--white);
+    width: 220px;
+    height: 50px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    transition: background-color .3s ease , color .3s ease;
+}
+
+.button button:hover{
+    background-color: var(--transparent);
+    color: var(--beige);
+    border: 3px solid var(--beige);
 }
