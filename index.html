@@ -16,10 +16,6 @@
             <div class="select-button">
                 <select>
                     <option disabled selected value=""> Seleccionar Producto</option>
-                    <option value="">mueble a</option>
-                    <option value=""> mueble b</option>
-                    <option value="">silla a</option>
-                    <option value="">silla b</option>
                 </select>
                 <button id="enter">
                 </button>
@@ -32,10 +28,32 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section id="sec3">
         <div class="add-product">
             <button> Agregar nuevo producto</button>
         </div>
-
+        <div class="modal-add-product">
+            <div class="content-modal">
+                <h4>Agregar nuevo producto</h4>
+                <button id="x">x</button>
+                <form>
+                    <label for="name">Producto <br>
+                        <input id="name" required type="text" placeholder="Ej: Reposera 4 posiciones." >
+                    </label>
+                    <label for="quantity-product">Cantidad <br>
+                        <input id="quantity-product" required type="number"  placeholder="Ej: 15">
+                    </label>
+                    <label for="cost-product"> Costo del producto <br>
+                        <input id="cost-product" type="number"  required placeholder="Ej: 15500">
+                    </label> 
+                    <label for="sale-value"> Valor de venta <br>
+                        <input id="sale-value" type="number"  required placeholder="Ej: 35500">
+                    </label>
+                    <button id="create-element" type="submit" required>Agregar</button>
+                </form>
+            </div>
+        </div>
     </section>
     <section id="products">
         <div class="display-product">
@@ -84,5 +102,6 @@
             </div>
         </div>
     </section>
+    <script src="./script.js"></script>
 </body>
 </html>
