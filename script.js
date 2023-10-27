@@ -33,6 +33,7 @@ const $divSelectProduct = document.querySelector('.select-product');
 const $divProduct = document.querySelector('.product');
 const $sectionDisplayProduct = document.querySelector('.products');
 const $modalAddProduct = document.querySelector('.modal-add-product');
+const $displayproduct = document.querySelector('.display-product');
  
 let arrayElements =[];
 
@@ -57,6 +58,11 @@ $modalX.addEventListener('click', () => {
     $modalAddProduct.classList.remove('show');
 })
 
+$seeStock.addEventListener('click', () => {
+    $displayproduct.style.display = 'block';
+    location.href = '#products';
+})
+
 
 //Function create element
 function createElement() {
@@ -71,10 +77,18 @@ function createElement() {
     } else {
         arrayElements.push({
             name: $inputName.value,
+            addProduct: 0,
+            sales: "",
             quantity: $inputQuantityProduct.value,
             cost: $inputCostProduct.value,
             saleValue: $inputSaleValue.value,
             id: index,
+            salesLast30: "",
+            grossProfit: "",
+            netProfit: "",
+            profitMargin: "",
+            
+
         })
         let option = `<option value=${index}>${name}</option>`;
         document.querySelector('.select-button select').insertAdjacentHTML('beforeend', option);
@@ -88,20 +102,26 @@ function createElement() {
 }
 
 
-
-
-
-
-
 //Function select element
 
-function selectElement(id) {
+function selectElement() {
 
-     if($select.value == "") {
+
+     if($select.value== "") {
         return
     } else {
         $divSelectProduct.classList.remove('close');
         $divSelectProduct.classList.add('open');
         $divProduct.style.display = 'block';
     }
-}
+    $nameProduct.innerHTML = arrayElements[$select.value].name;
+    $displayNameProduct.innerHTML = arrayElements[$select.value].name;
+    $quantityOfProduct.innerHTML = arrayElements[$select.value].quantity;
+    $productCost.innerHTML = `$ ${arrayElements[$select.value].cost}`;
+    $saleValue.innerHTML = `$ ${arrayElements[$select.value].saleValue}`;
+    $saleLast30.innerHTML = arrayElements[$select.value].salesLast30;
+    $grossProfit.innerHTML = arrayElements[$select.value].grossProfit;
+    $netProfit.innerHTML = arrayElements[$select.value].netProfit;
+    $profitMargin.innerHTML = arrayElements[$select.value].profitMargin;
+
+} 
