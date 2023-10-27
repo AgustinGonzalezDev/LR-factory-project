@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amoblamiento JR</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./updateSotck.css">
 </head>
 <body>
     <section class="title">
         <h1>AMOBLAMIENTOS JR</h1>
     </section>
-    <section>
+    <section id="sec2">
         <div class="select-product close">
             <h2>Seleccionar Producto</h2>
             <div class="select-button">
@@ -29,15 +30,59 @@
                 </div>
             </div>
         </div>
+        <div class="modal">
+            <div class="content-modal-update-stock">
+                <h4>¿Qué quieres hacer?</h4>
+                <div class="content-modal-update-stock__buttons">
+                <button id="in-stock">Ingreso de mercadería</button>
+                <button id="ext-stock">Egreso de mercadería</button>
+                </div>
+                <button data="update-stock" id="x">x</button>
+                <div class="entry">
+                    <h4>Ingreso de mercadería</h4>
+                    <form>
+                        <label for="quantity">Cantidad
+                            <input type="number">
+                        </label> <br>
+                        <label for="individual-cost">Costo individual por producto
+                            <input type="number">
+                        </label> <br>
+                        <label for="total-cost">Costo total de la compra
+                            <input type="number">
+                        </label> <br>
+                        <div>
+                            <button id="entry-save">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="release">
+                    <h4>Egreso de mercadería</h4>
+                    <form>
+                        <label for="quantity">Cantidad
+                            <input type="number">
+                        </label> <br>
+                        <label for="individual-value">Valor individual por producto
+                            <input type="number">
+                        </label> <br>
+                        <label for="total-sale"> Valor total de la venta
+                            <input type="number">
+                        </label> <br>
+                        <div>
+                            <button id="release-save">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
     <section id="sec3">
         <div class="add-product">
             <button> Agregar nuevo producto</button>
         </div>
-        <div class="modal-add-product">
-            <div class="content-modal">
+        <div class="modal"> 
+             <div class="content-modal-add-product">
                 <h4>Agregar nuevo producto</h4>
-                <button id="x">x</button>
+                <button data="add-product" id="x">x</button>
                 <form>
                     <label for="name">Producto <br>
                         <input id="name" required type="text" placeholder="Ej: Reposera 4 posiciones." >

@@ -6,7 +6,10 @@ const $addProduct =  document.querySelector('.add-product button');
 const $salesHistory = document.querySelector('.sales-history button');
 const $moreStatistics = document.querySelector('.more-statistics button');
 const $agreeElement = document.querySelector('#create-element');
-const $modalX = document.querySelector('.content-modal button');
+const $modalAddProductX = document.querySelector('.content-modal-add-product #x');
+const $modalUpdateStockX = document.querySelector('.content-modal-update-stock #x');
+const $inStock = document.querySelector('#in-stock');
+const $extStock = document.querySelector('#ext-stock');
 
 //modal input agree elements
 const $inputName = document.querySelector('#name');
@@ -32,7 +35,12 @@ const $displayNameProduct = document.querySelector('.display-product h3');
 const $divSelectProduct = document.querySelector('.select-product');
 const $divProduct = document.querySelector('.product');
 const $sectionDisplayProduct = document.querySelector('.products');
-const $modalAddProduct = document.querySelector('.modal-add-product');
+const $modal = document.querySelectorAll('.m');
+const $modalUpdateStock = document.querySelector('#sec2 .modal');
+const $modalUpdateStock1 = document.querySelector('.content-modal-update-stock')
+const $entry = document.querySelector('.entry');
+const $release = document.querySelector('.release');
+const $modalAddProduct = document.querySelector('#sec3 .modal');
 const $displayproduct = document.querySelector('.display-product');
  
 let arrayElements =[];
@@ -49,18 +57,53 @@ $addProduct.addEventListener('click', () => {
  $modalAddProduct.classList.add('show');
 })
 
+$modalAddProductX.addEventListener('click', () => {
+    $modalAddProduct.classList.remove('show');
+})
+
 $agreeElement.addEventListener('click', (e) => {
     e.preventDefault();
     createElement();
 }) 
 
-$modalX.addEventListener('click', () => {
-    $modalAddProduct.classList.remove('show');
+$inStock.addEventListener('click', () => {
+    $modalUpdateStock1.classList.add('open2');
+    $release.style.display = 'none';
+    $entry.style.display = 'block';
 })
+
+$extStock.addEventListener('click', () => {
+    $modalUpdateStock1.classList.add('open2');
+    $entry.style.display = 'none';
+    $release.style.display = 'block';
+    
+})
+
+// $modal.addEventListener('click', (event) => {
+//     const element = event.target;
+//     const elementData = element.attributes.data.value
+//     if(elementData == 'add-product') {
+//         $modalAddProduct.classList.remove('show');
+//     } else if(elementData == update-stock) {
+//         $modalUpdateStock.classList.remove('show');
+//     };
+// })
+
 
 $seeStock.addEventListener('click', () => {
     $displayproduct.style.display = 'block';
     location.href = '#products';
+});
+
+$updateStock.addEventListener('click', () => {
+    $modalUpdateStock.classList.add('show');
+})
+
+$modalUpdateStockX.addEventListener('click', () => {
+    $modalUpdateStock.classList.remove('show');
+    $modalUpdateStock1.classList.remove('open2');
+    $entry.style.display = 'none';
+    $release.style.display = 'none';
 })
 
 
